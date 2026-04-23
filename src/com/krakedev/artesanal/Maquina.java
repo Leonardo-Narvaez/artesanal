@@ -1,11 +1,16 @@
 package com.krakedev.artesanal;
 
 public class Maquina {
+	private String codigo;
 	private String nombreCerveza;
 	private String descripcion;
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
+
+	public String getCodigo() {
+		return codigo;
+	}
 
 	public String getNombreCerveza() {
 		return nombreCerveza;
@@ -43,7 +48,9 @@ public class Maquina {
 		return cantidadActual;
 	}
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima) {
+	public Maquina(String codigo, String nombreCerveza, String descripcion, double precioPorMl,
+			double capacidadMaxima) {
+		this.codigo = codigo;
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
@@ -51,8 +58,9 @@ public class Maquina {
 		this.cantidadActual = 0;
 	}
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl) {
+	public Maquina(String codigo, String nombreCerveza, String descripcion, double precioPorMl) {
 
+		this.codigo = codigo;
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
@@ -61,12 +69,12 @@ public class Maquina {
 	}
 
 	public void llenarMaquina() {
-		this.cantidadActual = this.capacidadMaxima - 100;
+		this.cantidadActual = this.capacidadMaxima - 200;
 	}
 
 	public boolean recargarCerveza(double cantidad) {
 		double limitePermitido;
-		limitePermitido = capacidadMaxima - 100;
+		limitePermitido = capacidadMaxima - 200;
 
 		if (cantidadActual + cantidad <= limitePermitido) {
 			cantidadActual = cantidadActual + cantidad;
@@ -88,8 +96,9 @@ public class Maquina {
 	}
 
 	public void imprimir() {
-		String mensaje = "Nombre cerveza: " + nombreCerveza + ", Descripcion: " + descripcion + ", Precio por ml: "
-				+ precioPorMl + ", Capacidad Maxima: " + capacidadMaxima + ", Cantidad actual: " + cantidadActual;
+		String mensaje = "Codigo: " + codigo + "Nombre cerveza: " + nombreCerveza + ", Descripcion: " + descripcion
+				+ ", Precio por ml: " + precioPorMl + ", Capacidad Maxima: " + capacidadMaxima + ", Cantidad actual: "
+				+ cantidadActual;
 
 		System.out.println(mensaje);
 	}

@@ -7,7 +7,7 @@ public class TestRecargar {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		boolean resultado;
-		Maquina rubia = new Maquina("Pilsener", "Cerveza rubia", 0.02, 8000);
+		Maquina rubia = new Maquina("CRV_97", "Pilsener", "Cerveza rubia", 0.02, 8000);
 		System.out.println("--------Estado Inicial-------");
 		rubia.imprimir();
 		System.out.println("----------Recarga 1----------");
