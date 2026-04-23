@@ -60,7 +60,7 @@ public class Maquina {
 		this.cantidadActual = 0;
 	}
 
-	public void llenar() {
+	public void llenarMaquina() {
 		this.cantidadActual = this.capacidadMaxima - 100;
 	}
 

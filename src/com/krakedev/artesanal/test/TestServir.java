@@ -11,7 +11,7 @@ public class TestServir {
 		System.out.println("--------Estado Inicial-------");
 		rubia.imprimir();
 		System.out.println("------Llenando Maquina-------");
-		rubia.llenar();
+		rubia.llenarMaquina();
 		rubia.imprimir();
 		System.out.println("------Siriviendo 1000ml------");
 		double valor;

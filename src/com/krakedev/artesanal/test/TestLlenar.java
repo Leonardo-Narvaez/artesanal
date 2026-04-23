@@ -8,12 +8,12 @@ public class TestLlenar {
 		// TODO Auto-generated method stub
 		Maquina rubia = new Maquina("Pilsener", "Cerveza rubia", 0.02, 8000);
 		rubia.imprimir();
-		rubia.llenar();
+		rubia.llenarMaquina();
 		rubia.imprimir();
 
 		Maquina negra = new Maquina("Club", "Cerveza oscura", 0.03);
 		negra.imprimir();
-		negra.llenar();
+		negra.llenarMaquina();
 		negra.imprimir();
 	}
 
