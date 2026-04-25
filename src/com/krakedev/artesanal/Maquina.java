@@ -48,6 +48,9 @@ public class Maquina {
 		return cantidadActual;
 	}
 
+	public Maquina() {
+	}
+
 	public Maquina(String codigo, String nombreCerveza, String descripcion, double precioPorMl,
 			double capacidadMaxima) {
 		this.codigo = codigo;
