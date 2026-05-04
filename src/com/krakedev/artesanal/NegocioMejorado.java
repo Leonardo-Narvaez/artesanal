@@ -4,6 +4,16 @@ import java.util.ArrayList;
 
 public class NegocioMejorado {
 	private ArrayList<Maquina> maquinas;
+	private ArrayList<Cliente> clientes = new ArrayList<>();
+	private int ultimoCodigo = 100;
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 
 	public ArrayList<Maquina> getMaquinas() {
 		return maquinas;
@@ -50,6 +60,35 @@ public class NegocioMejorado {
 			m = maquinas.get(i);
 			if (codigo.equals(m.getCodigo())) {
 				return m;
+			}
+		}
+		return null;
+	}
+
+	public void registrarCliente(String nombre, String cedula) {
+		Cliente cliente = new Cliente(nombre, cedula);
+		cliente.setCodigo(ultimoCodigo);
+		ultimoCodigo++;
+		clientes.add(cliente);
+	}
+
+	public Cliente buscarClientePorCedula(String cedula) {
+		Cliente c;
+		for (int i = 0; i < clientes.size(); i++) {
+			c = clientes.get(i);
+			if (cedula.equals(c.getCedula())) {
+				return c;
+			}
+		}
+		return null;
+	}
+
+	public Cliente buscarClientePorCodigo(int codigo) {
+		Cliente c;
+		for (int i = 0; i < clientes.size(); i++) {
+			c = clientes.get(i);
+			if (codigo == c.getCodigo()) {
+				return c;
 			}
 		}
 		return null;
